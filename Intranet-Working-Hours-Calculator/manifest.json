@@ -1,0 +1,42 @@
+{
+  "name": "Intranet-Working-Hours-Calculator",
+  "description": "인트라넷 근무시간 계산기",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "Polaris_Office_logo.png",
+      "48": "Polaris_Office_logo.png",
+      "128": "Polaris_Office_logo.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": ["contentscript.js"],
+      "matches": ["https://www.polarisoffice.net/*"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "serviceworker.js"
+  },
+  "permissions": [
+    "webRequest",
+    "tabs",
+    "webNavigation",
+    "cookies",
+    "scripting",
+    "activeTab",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage"
+  ],
+  "host_permissions": ["https://www.polarisoffice.net/*"],
+  "icons": {
+    "16": "Polaris_Office_logo.png",
+    "48": "Polaris_Office_logo.png",
+    "128": "Polaris_Office_logo.png"
+  }
+}

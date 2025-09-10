@@ -1,0 +1,57 @@
+body {
+  background-color: #f8f8f8;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 220px;
+  height: 100px;
+  position: relative;
+}
+
+#result {
+  font-size: 14px;
+  color: transparent;
+  background-image: linear-gradient(45deg, #3498db, #e74c3c, #1abc9c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: revealText 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+#link {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  text-decoration: none;
+  color: lightgray;
+}
+#link:hover {
+  animation: rotateLink 2s infinite alternate;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateLink {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
